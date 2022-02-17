@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>3 Ocak Formu </title>
+    <script language ="JavaScript">
+
+        function loadMe ()
+        {
+            const person={}
+            person.Name="Murat",
+            person.Surname="Samancı",
+            person.City ="İstanbul",
+            
+           document.getElementById("txtName").value=person.Name
+           document.getElementById("txtSurname").value=person.Surname
+           document.getElementById("txtCity").value=person.City
+        }
+
+        function ShowMe()
+        {
+            window.alert(document.isimFormu.txtName.value+"\n"+document.isimFormu.txtSurname.value+"\n"+document.isimFormu.txtCity.value)
+        }
+        
+
+    </script>
+</head>
+
+<body>
+  <form Name="isimFormu" id="İsimFormu" method="post"
+    <center>
+            <table border="1" style="border-collapse: collapse; border-color: black;">
+                <tr>
+                    <td width ="%40">AD</td>
+                    <td>
+                    <input type="text" name="txtName", id="txtName" style="background-color: blue;color:black"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td width="%40">SOYAD</td>
+                    <td>
+                        <input type ="text" name="txtSurname" id ="txtSurname" style="background-color: blue; color : black "/>            
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td width="%40">ŞEHİR</td>
+                    <td>
+                        <input type ="text" name="txtCity" id ="txtCity" style="background-color: blue ; color:black"/>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Yükle</td>
+                    <td colspan="2" align="center">
+                        <input type="button" name="btnKaydet" id="btnKaydet" value ="Kaydet" onclick="loadMe();" />
+                        
+                    </td>        
+                </tr>
+
+                <tr>
+                    <td>Göster</td>
+                    <td colspan="2" align="center">
+                        <input type="button" name="btnGöster" id="btnGöster" value="Göster" onclick="ShowMe();">
+                    </td>
+                </tr>
+            </table>
+        </center>
+    </form>
+
+   
+
+
+
+   
+
+
+</body>
+
+
+
+
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<head>
+    <title>Satış Formu </title>
+    <style>
+        td{font-weight: bold; font-family:verdana; font-size: 12pt;}
+    
+    </style>
+    <script language ="JavaScript">
+     function Save()
+                {
+                    var radioList=document.getElementsByName("rdKredi");
+                    var chkRequestList=document.getElementsByName("chkEkTalep");
+                    var requestResult="";
+                    for(var i=0; i<radioList.length;i++)
+                    {
+                        if(radioList[i].checked==true)
+                        {
+                            var creditResult=radioList[i].labels[0].textContent;
+                            break;
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                    }
+                    for(var i=0;i<chkRequestList.length;i++)
+                    {
+                        if(chkRequestList[i].checked==true)
+                        {
+                            requestResult +=chkRequestList[i].nextElementSibling.innerHTML+" ";
+                        }
+                    }
+                    window.alert(" Kredi Durumu: "+creditResult +"\n Ek Talepler: "+requestResult)
+                }
+                    
+        
+        </script>
+</head>
+
+
+
+
+<body style="background-color:brown;">
+    <form Name="SatışFormu" id="SatışFormu" method="post"> 
+        <center>
+            <table border="1" , width="60%" style="background-color: brown; ">
+                <tr>
+                    <td width = "40%">Satış Tarihi</td>
+                    <td width= "60%">
+                        <input type="date" name="dtSatisTarihi" id="dtSatisTarihi" style="background-color:aquamarine; width: 98%; color:black"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Müşteri</td>
+                    <td>
+                        <select name="cmbMusteri" id="cmbMüsteri" style="width:100%">
+                            <option value="0" selected hidden>Lütfen Seçim yapınız...</option>
+                            <option value="1" >Murat</option>
+                            <option value="2" >Sezer</option>
+                            <option value="3" >Anıl</option>
+                        </select>
+
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>Daire</td>
+                    <td>
+                        <select name="cmbDaire" id="cmbDaire" style="width:100%">
+                            <option value="0" selected hidden>Lütfen Seçim yapınız...</option>
+                            <option value="1" >1+0</option>
+                            <option value="2" >1+1</option>
+                            <option value="3" >2+1</option>
+                            <option value="4" >3+1</option>
+                        </select>
+
+
+                    </td>
+
+                </tr>
+                <tr>
+                    <td width = "40%">Fiyat</td>
+                    <td colspan = "1" aling ="center ">
+                        <input type="text" name="txtFiyat" id="txtFiyat" style="background-color:aquamarine; width: 35%; color:black" />
+                        <input type="text" name="txtFiyat1" id="txtFiyat1" style="background-color:aquamarine; width: 15%; color:black"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Çalışan</td>
+                    <td>
+                        <select name="cmbCalisan" id="cmbCalisan" style="width:100%">
+                            <option value="0" selected hidden>Lütfen Seçim yapınız...</option>
+                            <option value="1" >Ali</option>
+                            <option value="2" >Veli</option>
+                            <option value="3" >Murat</option>
+                            <option value="4" >Mehmet</option>
+                        </select>
+
+
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td>Notlar</td>
+                    <td><textarea name="txtNotlar" id="txtNotlar" cols="50" rows="5"></textarea></td>
+                </tr>
+
+                <tr>
+                    <td >Kredi Kullanımı Var mı ?</td> <!--burdan okuyup yazdır inner html ile yapılabiliyor-->
+                    <td style="font-weight: normal;">
+                        <input type="radio" name="rdKredi" id="rdKrediEvet" value="1" /><label for="rdKrediEvet">Evet</label>
+                        <input type="radio" name="rdKredi" id="rdKrediHayır" value="0" /><label for ="rdKrediHayır">Hayır</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ek Talepler</td>
+                    <td style="font-weight: normal;">
+                        <input type="checkbox" name="chkEkTalep" id="chkEkTalep1" value="1" /><label>Parke</label>
+                        <input type="checkbox" name="chkEkTalep" id="chkEkTalep2" value="2" /><label>Mobilya</label>
+                        <input type="checkbox" name="chkEkTalep" id="chkEkTalep3" value="3" /><label>Aynalı Cam</label>
+                        <input type="checkbox" name="chkEkTalep" id="chkEkTalep4" value="4" /><label>Jakuzi</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        
+                        <input type="button" name="btnSave" id="btnSave" value = "Kaydet" style="background-color: black; color: aqua; border-radius: 5px;"onclick = "Save();"/>
+        
+                    </td>
+                </tr>
+
+            <table>
+        </center>
+
+    </form>
+
+
+
+ </body>
+
